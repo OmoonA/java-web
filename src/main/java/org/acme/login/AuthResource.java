@@ -44,4 +44,54 @@ public class AuthResource {
                 .seeOther(URI.create("/after_login"))
                 .build();
     }
+
+    @GET
+    @Path("/after_login")
+    @Produces(MediaType.TEXT_HTML)
+    public Response afterLogin() {
+        // 세션 체크: 로그인 안 한 사용자 차단
+        String loginUser = context.session().get("loginUser");
+        // 세션 내용 로그 출력
+        System.out.println("=== 세션 ID : " + context.session().id()); // @@@@@@@@
+        System.out.println("=== loginUser : " + loginUser);
+        if (loginUser == null) {
+            // 세션 없음 → 로그인 페이지로 강제 이동
+            return Response
+                    .seeOther(URI.create("/login"))
+                    .build();
+        }
+        // 세션 있음 → 로그인 후 HTML 반환
+        InputStream html = getClass()
+                .getClassLoader()
+                .getResourceAsStream("META-INF/resources/login/main_after_login.html");
+        return Response.ok(html).build();
+    }
+
+    @GET
+    @Path("/logout")
+    public Response logout() {
+        // 로그아웃 전 세션 정보 출력
+        System.out.println("=== 로그아웃 전 세션 ID : " + context.session().id());
+        System.out.println("=== 로그아웃 전 loginUser : " + context.session().get("loginUser"));
+        // 세션 전체 삭제
+        context.session().destroy();
+        // 로그아웃 후 세션 정보 출력
+        System.out.println("=== 로그아웃 후 세션 ID : " + context.session().id());
+        System.out.println("=== 로그아웃 후 loginUser : " + context.session().get("loginUser"));
+        return Response
+                .seeOther(URI.create("/"))
+                .build();
+    }
+
+    // AuthResource.java 아래 새로 추가
+    @GET
+    @Path("/register")
+    @Produces(MediaType.TEXT_HTML)
+    public Response registerPage() {
+        InputStream html = getClass()
+                .getClassLoader()
+                .getResourceAsStream(
+                        "META-INF/resources/login/register.html");
+        return Response.ok(html).build();
+    }
 }
