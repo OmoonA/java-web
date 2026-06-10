@@ -27,6 +27,8 @@ console.log(testLet); // ReferenceError
 let testLet = 200;
 console.log(testConst); // ReferenceError
 const testConst = 300;
+
+
 // test.js 수정 → Toast 함수 제공
 function showToast(message, type = 'success') {
 // type : 'success' (초록) / 'danger' (빨강) / 'warning' (노랑)

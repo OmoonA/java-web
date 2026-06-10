@@ -1,3 +1,5 @@
+# 아직 수정중 입니다!...
+
 # Quarkus 프로젝트 시작! (학번 : 20250615  이름 :오다혜 )
 매 주 수업 내용을 요약, 실습 사진 첨부
 <br>
@@ -263,6 +265,8 @@ src\main\java\org\acme\GreetingResource.java
 <br>
 <br>
 
+## 10주차 수업 내용
+
 ## 11주차 수업 내용
 
 ## 12주차 수업 내용
@@ -272,6 +276,13 @@ src\main\java\org\acme\GreetingResource.java
 -
 
 ## 트러블슈팅(Troubleshooting)
+
+- Toast 구현을 위해 HTML도 바꾸고 test.js도 수정했는데 작동안함
+->   ` <script src="../js/test.js"></script>`를 추가해줌
+
+- 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
+
+- 프로필 내용 수정 후 토스트? 확인창이 안뜸, 전체화면에서 화면 비율이 이상함 
 
 <br>
 <br>

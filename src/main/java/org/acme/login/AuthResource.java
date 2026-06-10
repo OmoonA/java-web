@@ -263,4 +263,35 @@ public class AuthResource {
                 return Response.ok(html).build();
         }
 
+        // 13주차 추가
+        @POST
+        @Path("/profile/update")
+        @Transactional
+        @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+        public Response profileUpdate(
+                        @FormParam("email") String email,
+                        @FormParam("phone") String phone) {
+                // ① 세션 체크
+                String loginUser = context.session().get("loginUser");
+                if (loginUser == null) {
+                        return Response
+                                        .seeOther(URI.create("/login"))
+                                        .build();
+                }
+                // ② 이메일 중복 체크 (본인 제외)
+                User found = User.findByEmail(email);
+                if (found != null && !found.username.equals(loginUser)) {
+                        return Response
+                                        .seeOther(URI.create("/profile?error=duplicate_email"))
+                                        .build();
+                }
+                // ③ DB 업데이트
+                User user = User.findByUsername(loginUser);
+                user.email = email;
+                user.phone = phone;
+                return Response
+                                .seeOther(URI.create("/profile?success=updated"))
+                                .build();
+        }
+
 }
