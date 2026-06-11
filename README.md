@@ -23,6 +23,10 @@
 - 웹페이지 열기: w,  http://localhost:8080 로 접속
 
 
+- 자바 소스코드 위치: java\org\acme
+src\main\java\org\acme\GreetingResource.java
+테스트할때 스는 쿼크스에서 제공해주는거
+=> localhost:8008/hello 하면 문구가 나온다
 
 
 
@@ -169,7 +173,17 @@
 
 - 검색어 기능 추가: search.js에 검색내용이 없을 때 메인화면으로 돌아가는 기능 구현(showMainScreen 함수)
 
-## 중간고사 내용 정리
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+<details>
+
+<summary> 중간고사 내용 정리 </summary>
 
 ### 태그/속성 총 정리 
 태그 사용법 : <태그 속성="[https://google.com](https://google.com/)">내용</태그>
@@ -241,26 +255,28 @@
 - 일반 변수(하나의이름 하나의 값) 
 - 일반 배열(여러값, 인덱스로 접근) 
 - 객체배열(여러 속성을 가진 객체들의 나열, 키 값)
+
+</details>
+
+
 <br>
 <br>
+
+---
+
 <br>
 
 ## 9주차 수업 내용
 - 자바스크립트 기초
+자바스크립트 자료구조: 검색이나 필터링해야할때는 객체배열을 쓰자,
 
-- 
-
-- 자바 소스코드 위치: java\org\acme
-src\main\java\org\acme\GreetingResource.java
-테스트할때 스는 쿼크스에서 제공해주는거
-=> localhost:8008/hello 하면 문구가 나온다
 - 자바 소스코드의 구조
 
 - 관계형 데이터베이스
 
 - mysql과 orm드라이버등 추가할려고 pom.xml파일 속 <dependencies> 하위에 코드 삽입
 
--database에서 구현할때 최소한 기능을 분해하여 3파일이상으로 쪼개 놓음
+- database에서 구현할때 최소한 기능을 분해하여 3파일이상으로 쪼개 놓음
 
 <br>
 <br>
@@ -280,9 +296,34 @@ src\main\java\org\acme\GreetingResource.java
 - Toast 구현을 위해 HTML도 바꾸고 test.js도 수정했는데 작동안함
 ->   ` <script src="../js/test.js"></script>`를 추가해줌
 
-- 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
+- [ ] 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
 
-- 프로필 내용 수정 후 토스트? 확인창이 안뜸, 전체화면에서 화면 비율이 이상함 
+- [ ] 프로필 내용 수정 후 토스트? 확인창이 안뜸, 전체화면에서 화면 비율이 이상함 
 
 <br>
 <br>
+
+
+# Readme.md 꾸미기 메모
+- 이미지 첨부하기
+```markdown
+<div align="center">
+<img src="screenshots/파일명.png" width="45%" alt="이미지 없을때 임시 설명">
+</div>
+
+```
+
+- 
+
+
+- 코드블록으로 mermaid 다이어그램 플로우차트 만들기
+
+```mermaid
+graph TD
+A[시작] --> B[개발]
+B --> C[테스트]
+C --> D[배포]
+```
+
+
+- 코드를 짧게 언급할 때는 \` \`를 통해서 감싸주자
