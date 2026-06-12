@@ -7,9 +7,8 @@
     <title>League of Legends - 메인 페이지</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- 커스텀 스타일 (LOL 테마 + 챔피언 호버 효과) -->
-    <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/test2.js"></script>
     <script src="../js/toggleTheme.js"></script>
     
@@ -73,7 +72,7 @@ body.light-mode { background-color: #f8f9fa; color: #212529; }
 body.light-mode .navbar { background-color: #e9ecef !important; }
 body.light-mode .navbar .navbar-brand,
 body.light-mode .navbar .nav-link { color: #212529 !important; }
-body.light-mode .hero { background: linear-gradient(to bottom, #dce3ea, #f8f9fa); }
+body.light-mode .hero { background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.6)), url('../images/lollol.avif') center/cover no-repeat; }
 body.light-mode .card { background-color: #ffffff; color: #212529; border: 1px solid #dee2e6; }
 body.light-mode .card-title { color: #212529; }
 body.light-mode .card-text { color: #555; }
@@ -111,7 +110,7 @@ body.light-mode .card-text { color: #555; }
                 <img src="../images/logo.webp" alt="" width="30" height="24">
                 </a>    
                 <!-- [변경] "Navbar" 텍스트 → 다크/라이트 토글 버튼 -->
-                <button class="btn border-0" id="themeToggleBtn" onclick="toggleTheme()">
+                <button class="btn border-0" id="themeToggleBtn">
                     DARK
                 </button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -231,6 +230,7 @@ body.light-mode .card-text { color: #555; }
         </div>
     </section>
 
+    <script src="../js/search.js"></script>
 </body>
 
 </html>

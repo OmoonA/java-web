@@ -20,7 +20,7 @@
                 <img src="../images/logo.webp" alt="" width="30" height="24">
             </a>
             <!-- 다크/라이트 토글 버튼 -->
-            <button class="btn border-0" id="themeToggleBtn" onclick="toggleTheme()">
+            <button class="btn border-0" id="themeToggleBtn">
                 DARK
             </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,7 +37,7 @@
                         <a class="nav-link" href="#">챔피온</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="main_page_sub/download.html">다운로드</a>
+                        <a class="nav-link" href="../main_page_sub/download.html">다운로드</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">로그인</a>
@@ -96,6 +96,7 @@
                 </div>
             </div>
             <!-- 사진 업로드 폼 -->
+            <div id="uploadErrorMsg" class="alert alert-danger d-none mb-3"></div>
             <form id="uploadForm" method="POST" action="/profile/upload" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">프로필 사진 변경</label>
