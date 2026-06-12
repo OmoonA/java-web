@@ -17,7 +17,7 @@
       font-family: 'Segoe UI', sans-serif;
     }
     h3, h4 {
-      color: #c8aa6e; /* LOL 골드 톤 */
+      color: #c8aa6e;
     }
     .text-muted {
       color: #a0a0a0 !important;
@@ -27,7 +27,34 @@
       border-color: #444;
       color: white;
     }
+    /* 라이트 모드 */
+    body.light-mode {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+    body.light-mode h3,
+    body.light-mode h4 {
+      color: #8b6914;
+    }
+    body.light-mode .text-muted {
+      color: #6c757d !important;
+    }
+    body.light-mode .text-secondary {
+      color: #495057 !important;
+    }
+    body.light-mode .list-group-item {
+      background: transparent;
+      border-color: #dee2e6;
+      color: #212529;
+    }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+      }
+    });
+  </script>
 </head>
 <body>
 

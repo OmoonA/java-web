@@ -8,7 +8,7 @@ body { background-color: #0a0e17; color: #fff; font-family: 'Arial', sans-serif;
 .accent-red { color: #ff0000; }
 
 /* ── 카드 ────────────────────────────────────────────────────── */
-.card { background-color: #1e1e1e; border: none; transition: transform 0.3s, box-shadow 0.3s; }
+.card { background-color: #1e1e1e; color: #fff; border: none; transition: transform 0.3s, box-shadow 0.3s; }
 .card:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(160, 32, 240, 0.5); }
 .card-img-top { height: 200px; object-fit: cover; border-radius: 10px 10px 0 0; }
 
@@ -82,3 +82,25 @@ body.light-mode .hero { background: linear-gradient(to bottom, #dce3ea, #f8f9fa)
 body.light-mode .card { background-color: #ffffff; color: #212529; border: 1px solid #dee2e6; }
 body.light-mode .card-title { color: #212529; }
 body.light-mode .card-text { color: #555; }
+body.light-mode .card-footer { background-color: #f8f9fa; border-color: #dee2e6; }
+body.light-mode .modal-content { background-color: #ffffff !important; color: #212529; border-color: #dee2e6 !important; }
+body.light-mode .modal-header,
+body.light-mode .modal-footer { background-color: #ffffff; border-color: #dee2e6 !important; }
+body.light-mode .modal-body { background-color: #ffffff !important; }
+body.light-mode .btn-close-white { filter: none; }
+/* 라이트모드: Bootstrap 유틸리티 override */
+body.light-mode .text-white { color: #212529 !important; }
+body.light-mode .text-secondary { color: #6c757d !important; }
+body.light-mode .border-secondary { border-color: #dee2e6 !important; }
+body.light-mode .accent-purple { color: #7b2d8b; }
+body.light-mode .accent-red { color: #c0392b; }
+/* 라이트모드: btn-outline-light 가시성 */
+body.light-mode .btn-outline-light { color: #495057; border-color: #6c757d; }
+body.light-mode .btn-outline-light:hover { background-color: #6c757d; color: #fff; border-color: #6c757d; }
+/* 라이트모드: 표 */
+body.light-mode .table { --bs-table-color: #212529; color: #212529; }
+body.light-mode .table th,
+body.light-mode .table td { color: #212529; }
+/* 라이트모드: nav-tabs */
+body.light-mode .nav-tabs .nav-link { color: #495057; }
+body.light-mode .nav-tabs .nav-link.active { color: #212529; background-color: #fff; border-color: #dee2e6 #dee2e6 #fff; }

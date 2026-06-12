@@ -16,66 +16,9 @@
     
     
     <style>
-        body {
-            background-color: #0a0e17;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .navbar {
-            background-color: #000;
-        }
-
-        .hero {
-            background: linear-gradient(to bottom, #1e1e1e, #0a0e17);
-            min-height: 60vh;
-        }
-
-        .accent-purple {
-            color: #a020f0;
-        }
-
-        .accent-red {
-            color: #ff0000;
-        }
-
-        .card {
-            background-color: #1e1e1e;
-            border: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(161, 67, 201, 0.5);
-        }
-
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .btn-primary {
-            background-color: #a020f0;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #800080;
-        }
-        /* ── [추가] 테마 토글 버튼 (폰트 크기, 색상 등 ) ──────────────── */
-#themeToggleBtn { font-size: 1.1rem; color: #fff; }
-body.light-mode #themeToggleBtn { color: #212529; }
-/* ── [추가] 라이트 모드 (다양한 색상 정보 ─────────────────────── */
-body.light-mode { background-color: #f8f9fa; color: #212529; }
-body.light-mode .navbar { background-color: #e9ecef !important; }
-body.light-mode .navbar .navbar-brand,
-body.light-mode .navbar .nav-link { color: #212529 !important; }
-body.light-mode .hero { background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.6)), url('../images/lollol.avif') center/cover no-repeat; }
-body.light-mode .card { background-color: #ffffff; color: #212529; border: 1px solid #dee2e6; }
-body.light-mode .card-title { color: #212529; }
-body.light-mode .card-text { color: #555; }
+        /* download.html 전용: 히어로 배경 이미지 */
+        .hero { background: url('../images/lollol.avif') center/cover no-repeat; min-height: 60vh; }
+        body.light-mode .hero { background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.6)), url('../images/lollol.avif') center/cover no-repeat; }
     </style>
     <!--여기다가 css파일 불러오는것을 적습니다요-->
     <link rel="stylesheet" href="../css/download.css">

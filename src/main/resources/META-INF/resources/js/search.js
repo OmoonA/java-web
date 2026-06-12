@@ -86,16 +86,27 @@ const CHAMPIONS = [
 ];
 // ── 뉴스 데이터 ──────────────────────────────────────────────
 const NEWS = [
-    {
-        title: "새로운 챔피언 출시",
-        desc: "2026 루나 레벨 이벤트! 신규 챔피언과 함께하는 특별한 시즌.",
-        category: "게임 업데이트",
-    },
-    {
-        title: "패치 노트 16.4",
-        desc: "챔피언 밸런스 및 아이템 업데이트 내용을 확인하세요.",
-        category: "패치 노트",
-    },
+  {
+    title: '26.11 패치 상점 소식',
+    desc: '26.11 패치 상점 소식을 확인하세요.',
+    category: '공지사항',
+    img: 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/4aae0165e906071a5a6bc5276869557f2250a144-1920x1128.jpg?accountingTag=LoL&auto=format&fit=crop&q=80&h=313&w=556&crop=center',
+    link: 'https://www.leagueoflegends.com/ko-kr/news/notices/26-11-patch-store-news'
+  },
+  {
+    title: '리그 오브 레전드 26.12 패치 노트',
+    desc: '26.12 패치의 챔피언 밸런스 및 업데이트 내용을 확인하세요.',
+    category: '패치 노트',
+    img: 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/223b07f058934ef6f9dae54475aa0045cf39e866-1920x1080.jpg?accountingTag=LoL&auto=format&fit=crop&q=80&h=313&w=556&crop=center',
+    link: 'https://www.leagueoflegends.com/ko-kr/news/game-updates/league-of-legends-patch-26-12-notes'
+  },
+  {
+    title: '리그 오브 레전드 26.11 패치 노트',
+    desc: '26.11 패치의 챔피언 밸런스 및 업데이트 내용을 확인하세요.',
+    category: '패치 노트',
+    img: 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/03c35b80144c74c46810f192631b19faa7e83037-1920x1080.jpg?accountingTag=LoL&auto=format&fit=crop&q=80&h=313&w=556&crop=center',
+    link: 'https://www.leagueoflegends.com/ko-kr/news/game-updates/league-of-legends-patch-26-11-notes'
+  }
 ];
 // ── 검색 실행 ────────────────────────────────────────────────
 function performSearch(query) {
@@ -130,7 +141,7 @@ function performSearch(query) {
         champList.innerHTML = champResults
             .map(
                 (c) => `
-<div class="search-result-card d-flex align-items-center p-0 overflow-hidden"${c.modalId ? ` data-bs-toggle="modal" data-bs-target="#${c.modalId}" style="cursor:pointer;"` : ''}>
+<div class="search-result-card d-flex align-items-center p-0 overflow-hidden" data-bs-toggle="modal" data-bs-target="#championDetailModal" data-champion="${c.engName}" style="cursor:pointer;">
 <img src="${c.img}" alt="${c.name}">
 <div class="p-3">
 <div style="font-weight:700; font-size:1rem; color:#111;">${c.name} <span style="color:#888; font-size:0.85rem;">(${c.engName})</span></div>
@@ -148,11 +159,14 @@ function performSearch(query) {
         newsList.innerHTML = newsResults
             .map(
                 (n) => `
-<div class="search-result-card p-3">
+<a class="search-result-card d-block p-0 overflow-hidden text-decoration-none" href="${n.link}" target="_blank" rel="noopener noreferrer">
+<img src="${n.img}" alt="${n.title}" style="width:100%; height:180px; object-fit:cover;">
+<div class="p-3">
 <span style="font-size:0.75rem; background:#c8253a; color:#fff; padding:2px 8px; border-radius:3px;">${n.category}</span>
 <div style="font-weight:700; font-size:1rem; color:#111; margin-top:8px;">${n.title}</div>
 <div style="color:#555; font-size:0.9rem; margin-top:4px;">${n.desc}</div>
 </div>
+</a>
 `,
             )
             .join("");

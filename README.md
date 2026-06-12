@@ -428,17 +428,17 @@ src\main\java\org\acme\GreetingResource.java
 
 - [x] 3w 챔피온 카드(상세정보 모달 구현)
 
-- [ ] 6w 데이터 정의 추가
+- [x] 6w 데이터 정의 추가
     -새로 추가한 챔피온 데이터 3개이상
     -검색어 창에 키워드로 이름 입력
     -정상겁색 및 화면 출력
-- [ ] 6w 검색어 기능 추가
+- [x] 6w 검색어 기능 추가
     -검색어가 없거나 공백인 경우 메인화면으로 돌아가기
     -showMainScreen()함수를 만든다(performSearch에서 q가 없으면 호출 :조건)
     -클릭->기존 secthon이 다시 보임
 
-- [ ] 9w 챔피온 검색 결과
-- [ ] 9w 자바스크립트 호출방식 변경하기
+- [x] 9w 챔피온 검색 결과
+- [x] 9w 자바스크립트 호출방식 변경하기
     -기존 토글 함수를 인라인->리스너 방식으로 변경(클릭하면 toggle 함수 실행)
 - [ ] 9w 모든 페이지 동일 적용하기
     -다운로드 페이지 적용
@@ -447,42 +447,58 @@ src\main\java\org\acme\GreetingResource.java
     -문제점: 구버전 네비바, 다크/라이트 모드 작동 x
     -기존 index.html 재활용(네비바, css코드)
 
-- [ ] 11w 로그인 화면 입력값 체크
+- [x] 11w 로그인 화면 입력값 체크
     -회원가입 register.html 화면의 입력값 체크
     -동일하게 JS 정규식 체크 구현
-- [ ] 11w Js 폴더에 login.js를 생성하고 작성한다.
+- [x] 11w Js 폴더에 login.js를 생성하고 작성한다.
     -validateAndLogin() 함수를 구현한다.(기존 input_check.js를 참고한다.
 )
 
-- [ ] 11w Login 폴더에 login.html도 수정한다
+- [x] 11w Login 폴더에 login.html도 수정한다
     -현재 아이디, 패스워드 필드에 id가 있는가?
-- [ ] 12w 로그인 에러처리
+- [x] 12w 로그인 에러처리
     -로그인 에러 시 오류 메시지 없음
      login.js의 하단에 window.onload 함수를 추가한다
      로그인 실패 시 오류 메시지를 표시하시오.
-- [ ] 12w 업로드 에러 처리
+- [x] 12w 업로드 에러 처리
     -사진 업로드에 대한 오류 메시지 없음
      profile.html 파일 업로드 폼 위에 div 추가
      profile.js window.onload 에 추가
 
 
-- [ ] 13w 모든 페이지 검색창 동작
+- [x] 13w 모든 페이지 검색창 동작
 
-- [ ] 13w Js 로드 순서 확인, 상대경로 확인
+- [x] 13w Js 로드 순서 확인, 상대경로 확인
 
-- [ ] 13w 네비게이션 바 통일
+- [x] 13w 네비게이션 바 통일
 
-- [ ] 13w 하이퍼 링크 체크(상대경로 체크)
+- [x] 13w 하이퍼 링크 체크(상대경로 체크)
 
-- [ ] 13w 전체 페이지 다크/라이트 모드 통일
+- [x] 13w 전체 페이지 다크/라이트 모드 통일
 
-- [ ] 13w 자바 자바스크립트 코드 체크
+- [x] 13w 자바 자바스크립트 코드 체크
     -들여쓰기 불필요한 코드 중복
     -코드별 주석
 
 ## 추가 구현
-- [ ] 
-- [ ] 
+- [x] 최신뉴스에 이미지와 실제 리그오브레전드 패치노트 등록하고 더보기하면 실제 리그오브레전드 사이트의 공지사항으로 넘어가게 링크 등록 
+<div align="center">
+<img src="screenshots\스크린샷 2026-06-12 214932.png" width="45%" alt="최신뉴스 추가">
+</div>
+
+- [x] 검색에 뉴스도 뜨도록 뉴스 등록
+<div align="center">
+<img src="screenshots\스크린샷 2026-06-12 214706.png" width="45%" alt="검색뉴스 추가">
+</div>
+
+- [x] 상세보기와 아트록스 다크/라이트 모드 적용(수정)
+<table align="center">
+  <tr>
+    <td><img src="screenshots\스크린샷 2026-06-12 132611.png" width="100%"></td>
+    <td><img src="screenshots\스크린샷 2026-06-12 215612.png" width="100%"></td>
+  </tr>
+</table>
+
 - [ ] 
 
 
@@ -490,21 +506,24 @@ src\main\java\org\acme\GreetingResource.java
 
 
 ### 모르겠는것들
-- [ ] `<script src="js/test.js"></script>` 의 적는 위치 규칙
+- [x] `<script src="js/test.js"></script>` 의 적는 위치 규칙, 순서
+    
 - [ ] 
 
 
 
 ## 트러블슈팅(Troubleshooting)
 
-- Toast 구현을 위해 HTML도 바꾸고 test.js도 수정했는데 작동안함
+- [X] Toast 구현을 위해 HTML도 바꾸고 test.js도 수정했는데 작동안함
 ->   ` <script src="../js/test.js"></script>`를 추가해줌
 
 - [ ] ppt의 이모지들이 복사가 안되어서 전반적으로 통일감있게 수정필요
 
-- [ ] 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
+- [x] 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
+    window.onload 를 아래의 코드로 바꿔서 수정
+    `window.addEventListener('load', function() { fetch('/profile/info')... });`
 
-- [ ] 프로필 내용 수정 후 토스트? 확인창이 안뜸, 전체화면에서 화면 비율이 이상함 
+- [x] 프로필 내용 수정 후 토스트? 확인창이 안뜸, 전체화면에서 화면 비율이 이상함 
 
 <br>
 <br>

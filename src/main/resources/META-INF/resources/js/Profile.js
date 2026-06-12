@@ -1,12 +1,23 @@
 // ===== ① 페이지 로딩 시 실행 =====
-window.onload = function() {
+window.addEventListener('load', function() {
 
     // (1) 프로필 정보 불러오기 (DB → 화면)
     fetch('/profile/info')
         .then(res => res.json())
         .then(data => {
+            // 네비바 Tooltip (main_after_login.html, profile.html 공통)
+            const profileLink = document.getElementById('profileNavLink');
+            if (profileLink) {
+                new bootstrap.Tooltip(profileLink, {
+                    title: ' ' + data.username,
+                    placement: 'bottom'
+                });
+            }
+            // 아래는 profile.html 전용 요소 — 없으면 조기 종료
+            const infoUsername = document.getElementById('infoUsername');
+            if (!infoUsername) return;
             // 정보 테이블 표시
-            document.getElementById('infoUsername').textContent = data.username;
+            infoUsername.textContent = data.username;
             document.getElementById('infoEmail').textContent = data.email;
             document.getElementById('infoPhone').textContent = data.phone;
             if (data.profileImage) {
@@ -16,12 +27,6 @@ window.onload = function() {
             // 수정 폼에 기존 값 자동 채우기
             document.getElementById('updateEmail').value = data.email;
             document.getElementById('updatePhone').value = data.phone;
-            // 네비바 Tooltip 으로 사용자명 표시
-            const profileLink = document.getElementById('profileNavLink');
-            if (profileLink) {
-                profileLink.setAttribute('data-bs-title', ' ' + data.username);
-                new bootstrap.Tooltip(profileLink);
-            }
         });
 
     // (2) URL 파라미터 감지 (error / success)
@@ -71,7 +76,7 @@ window.onload = function() {
             div.classList.remove('d-none');
         }
     }
-};
+});
 
 
 // ===== ② 회원정보 수정 폼 유효성 검사 + 제출 =====
