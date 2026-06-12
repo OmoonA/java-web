@@ -355,7 +355,6 @@ src\main\java\org\acme\GreetingResource.java
   <tr>
     <td><img src="screenshots\스크린샷 2026-06-12 105716.png" width="100%"></td>
     <td><img src="screenshots\스크린샷 2026-06-12 110302.png" width="100%"></td>
-    <td><img src="" width="100%"></td>
   </tr>
 </table>
 
