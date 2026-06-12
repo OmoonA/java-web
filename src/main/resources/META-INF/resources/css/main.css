@@ -1,7 +1,25 @@
 /* ── 기본 레이아웃 ──────────────────────────────────────────── */
 body { background-color: #0a0e17; color: #fff; font-family: 'Arial', sans-serif; }
 .navbar { background-color: #000; }
-.hero { background: linear-gradient(to bottom, #1e1e1e, #0a0e17); min-height: 60vh; }
+.hero { background: linear-gradient(to bottom, #1e1e1e, #0a0e17); min-height: 60vh; position: relative; overflow: hidden; }
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
 
 /* ── 강조 색상 ──────────────────────────────────────────────── */
 .accent-purple { color: #a020f0; }
@@ -104,3 +122,85 @@ body.light-mode .table td { color: #212529; }
 /* 라이트모드: nav-tabs */
 body.light-mode .nav-tabs .nav-link { color: #495057; }
 body.light-mode .nav-tabs .nav-link.active { color: #212529; background-color: #fff; border-color: #dee2e6 #dee2e6 #fff; }
+
+/* 챔피언 페이지 */
+.champion-page-hero {
+    background: linear-gradient(rgba(0,0,0,0.62), rgba(10,14,23,0.9)), url('../images/lollol.avif') center/cover no-repeat;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #c8a96e;
+}
+
+.role-filter-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.role-filter-btn {
+    width: 92px;
+    min-height: 92px;
+    border: 1px solid rgba(200, 169, 110, 0.45);
+    background: #111722;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.role-filter-btn img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.role-filter-btn span {
+    font-size: 0.86rem;
+}
+
+.role-filter-btn:hover,
+.role-filter-btn.active {
+    transform: translateY(-3px);
+    border-color: #c8a96e;
+    box-shadow: 0 8px 18px rgba(200, 169, 110, 0.24);
+}
+
+.champion-page-card .card-img-top {
+    height: 230px;
+}
+
+.champion-role-badge {
+    background: #c8a96e;
+    color: #111;
+}
+
+.champion-empty {
+    background: #1e1e1e;
+    border: 1px solid rgba(200, 169, 110, 0.35);
+    border-radius: 8px;
+    padding: 56px 20px;
+}
+
+.champion-empty p {
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+body.light-mode .champion-page-hero {
+    background: linear-gradient(rgba(255,255,255,0.3), rgba(248,249,250,0.92)), url('../images/lollol.avif') center/cover no-repeat;
+}
+
+body.light-mode .role-filter-btn {
+    background: #fff;
+    color: #212529;
+}
+
+body.light-mode .champion-empty {
+    background: #fff;
+}

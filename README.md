@@ -298,6 +298,7 @@ src\main\java\org\acme\GreetingResource.java
 
 
 - MYSQL 설치: community버전 https://dev.mysql.com/downloads/installer/
+
 |명령어|내용|
 |:--|:--|
 |show databases;|DB 목록 확인|
@@ -312,6 +313,7 @@ src\main\java\org\acme\GreetingResource.java
     <td><img src="screenshots\스크린샷 2026-06-12 023141.png" width="100%"></td>
   </tr>
 </table>
+
 - db테이블 확인 http://localhost:8080/q/dev/ -> database view
 
 - mysql과 orm드라이버등 추가할려고 pom.xml파일 속 <dependencies> 하위에 코드 삽입
@@ -440,10 +442,10 @@ src\main\java\org\acme\GreetingResource.java
 - [x] 9w 챔피온 검색 결과
 - [x] 9w 자바스크립트 호출방식 변경하기
     -기존 토글 함수를 인라인->리스너 방식으로 변경(클릭하면 toggle 함수 실행)
-- [ ] 9w 모든 페이지 동일 적용하기
+- [x] 9w 모든 페이지 동일 적용하기
     -다운로드 페이지 적용
     -다크/라이트 모드 공통 적용
-- [ ] 10w 로그인 페이지의 다크/라이트 모드를 구현
+- [x] 10w 로그인 페이지의 다크/라이트 모드를 구현
     -문제점: 구버전 네비바, 다크/라이트 모드 작동 x
     -기존 index.html 재활용(네비바, css코드)
 
@@ -481,6 +483,10 @@ src\main\java\org\acme\GreetingResource.java
     -코드별 주석
 
 ## 추가 구현
+- [x] 챔피온 이미지를 원하는 이미지로 바꾸기(그림판에 직 접 그렸습니다.)
+<div align="center">
+<img src="screenshots\스크린샷 2026-06-12 232654.png" width="45%" alt="최신뉴스 추가">
+</div>
 - [x] 최신뉴스에 이미지와 실제 리그오브레전드 패치노트 등록하고 더보기하면 실제 리그오브레전드 사이트의 공지사항으로 넘어가게 링크 등록 
 <div align="center">
 <img src="screenshots\스크린샷 2026-06-12 214932.png" width="45%" alt="최신뉴스 추가">
@@ -491,25 +497,32 @@ src\main\java\org\acme\GreetingResource.java
 <img src="screenshots\스크린샷 2026-06-12 214706.png" width="45%" alt="검색뉴스 추가">
 </div>
 
-- [x] 상세보기와 아트록스 다크/라이트 모드 적용(수정)
+- [x] 상세보기와 아트록스 다크/라이트 모드 적용(수정), 다른 챔피언에도 상세보기 추가
 <table align="center">
   <tr>
     <td><img src="screenshots\스크린샷 2026-06-12 132611.png" width="100%"></td>
     <td><img src="screenshots\스크린샷 2026-06-12 215612.png" width="100%"></td>
+    <td><img src="screenshots\스크린샷 2026-06-12 220525.png" width="100%"></td>
   </tr>
 </table>
 
-- [ ] 
+- [x] 메인 홈에 영상넣는게 멋있어보여서 비디오를 추가함(롤 공식 시네마틱 영상 녹화해서 mp4형식으로 삽입), 가독성을 위해 오버레이로 누름
+<div align="center">
+<img src="screenshots\스크린샷 2026-06-12 221144.png" width="45%" alt="배경영상추가">
+</div>
 
+- [x] 뉴스 페이지 구현
+<div align="center">
+<img src="screenshots\스크린샷 2026-06-12 222611.png" width="45%" alt="배경영상추가">
+</div>
 
-
-
-
-### 모르겠는것들
-- [x] `<script src="js/test.js"></script>` 의 적는 위치 규칙, 순서
-    
-- [ ] 
-
+- [x] 챔피온 페이지구현 + 챔피온 분류별로 보는 기능(롤 공식 홈페이지의 기능 참고)
+<table align="center">
+  <tr>
+    <td><img src="screenshots\스크린샷 2026-06-12 233032.png" width="100%"></td>
+    <td><img src="screenshots\스크린샷 2026-06-12 233048.png" width="100%"></td>
+  </tr>
+</table>
 
 
 ## 트러블슈팅(Troubleshooting)
@@ -517,7 +530,7 @@ src\main\java\org\acme\GreetingResource.java
 - [X] Toast 구현을 위해 HTML도 바꾸고 test.js도 수정했는데 작동안함
 ->   ` <script src="../js/test.js"></script>`를 추가해줌
 
-- [ ] ppt의 이모지들이 복사가 안되어서 전반적으로 통일감있게 수정필요
+- [ ] ppt의 이모지들이 복사가 안되어서 전반적으로 통일감있게 수정필요->이모지 포기
 
 - [x] 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
     window.onload 를 아래의 코드로 바꿔서 수정
@@ -525,8 +538,18 @@ src\main\java\org\acme\GreetingResource.java
 
 - [x] 프로필 내용 수정 후 토스트? 확인창이 안뜸, 전체화면에서 화면 비율이 이상함 
 
+- [x] 다운로드 창에서 로그인세션이어도 로그아웃버튼이 안뜸->수정 완
+
 <br>
 <br>
+
+
+### 모르겠는것들
+- [x] `<script src="js/test.js"></script>` 의 적는 위치 규칙, 순서
+    
+- [x] @get, @post 형식은 알겠는데 보내고 받는 주체가 뭔지 모르겠음
+        ->브라우저에서 get요청이 오면 @get이 반응한다! OK 이해완료
+
 
 
 # Readme.md 꾸미기 메모

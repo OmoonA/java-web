@@ -1,11 +1,11 @@
-const CHAMPION_DETAILS = [
+﻿const CHAMPION_DETAILS = [
     {
         ko: "아트록스",
         en: "Aatrox",
         role: "전사",
         lane: "탑",
         difficulty: "상",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Aatrox.png",
+        img: "Aatrox.png",
         desc: "다르킨의 검을 휘두르며 전투를 압도하는 전사입니다.",
     },
     {
@@ -14,7 +14,7 @@ const CHAMPION_DETAILS = [
         role: "마법사",
         lane: "정글/미드",
         difficulty: "중",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Sylas.png",
+        img: "Sylas.png",
         desc: "상대의 궁극기를 빼앗아 전황을 뒤집는 마법사입니다.",
     },
     {
@@ -23,7 +23,7 @@ const CHAMPION_DETAILS = [
         role: "마법사",
         lane: "미드",
         difficulty: "상",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Anivia.png",
+        img: "Anivia.png",
         desc: "얼음 마법과 부활 능력으로 전장을 통제하는 마법사입니다.",
     },
     {
@@ -32,7 +32,7 @@ const CHAMPION_DETAILS = [
         role: "전사",
         lane: "정글",
         difficulty: "중",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Briar.png",
+        img: "Briar.png",
         desc: "광폭한 돌진과 회복력으로 싸움을 이어가는 전사입니다.",
     },
     {
@@ -41,7 +41,7 @@ const CHAMPION_DETAILS = [
         role: "전사",
         lane: "탑",
         difficulty: "상",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Jax.png",
+        img: "Jax.png",
         desc: "결투와 지속 교전에 강한 근접 전사입니다.",
     },
     {
@@ -50,7 +50,7 @@ const CHAMPION_DETAILS = [
         role: "원거리 딜러",
         lane: "원딜",
         difficulty: "중",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Jinx.png",
+        img: "Jinx.png",
         desc: "폭발적인 화력으로 교전을 마무리하는 원거리 딜러입니다.",
     },
     {
@@ -59,7 +59,7 @@ const CHAMPION_DETAILS = [
         role: "마법사",
         lane: "미드",
         difficulty: "상",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Mel.png",
+        img: "Mel.png",
         desc: "마법을 되받아치고 빛의 힘으로 적을 압박하는 마법사입니다.",
     },
     {
@@ -68,7 +68,7 @@ const CHAMPION_DETAILS = [
         role: "원거리 딜러",
         lane: "원딜",
         difficulty: "중",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Yunara.png",
+        img: "Yunara.png",
         desc: "꾸준한 공격과 신념으로 전투를 이어가는 원거리 딜러입니다.",
     },
     {
@@ -77,11 +77,23 @@ const CHAMPION_DETAILS = [
         role: "전사",
         lane: "탑",
         difficulty: "상",
-        img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Zaahen.png",
+        img: "자헨.webp",
         desc: "강한 압박과 근접 전투로 앞라인을 책임지는 전사입니다.",
     },
 ];
 
+function getChampionImagePath(fileName) {
+    if (fileName.indexOf("/") >= 0 || fileName.indexOf("http") === 0) {
+        return fileName;
+    }
+
+    const pathName = window.location.pathname;
+    const imagePrefix = pathName.indexOf("/login/") >= 0 || pathName.indexOf("/main_page_sub/") >= 0
+        ? "../images/"
+        : "images/";
+
+    return imagePrefix + fileName;
+}
 function renderChampionCards() {
     const championRow = document.querySelector("section.container.my-5 .row.g-4");
     if (!championRow) return;
@@ -89,7 +101,7 @@ function renderChampionCards() {
     championRow.innerHTML = CHAMPION_DETAILS.map((champ) => `
         <div class="col-md-6 col-lg-4 col-xl-2">
             <div class="card text-center h-100">
-                <img src="${champ.img}" class="card-img-top" alt="${champ.ko}" loading="lazy">
+                <img src="${getChampionImagePath(champ.img)}" class="card-img-top" alt="${champ.ko}" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title">${champ.ko} (${champ.en})</h5>
                     <p class="card-text small">역할: ${champ.role} / 난이도: ${champ.difficulty}</p>
@@ -149,7 +161,7 @@ function ensureChampionDetailModal() {
 
 function fillChampionDetailModal(champ) {
     document.getElementById("championDetailModalLabel").textContent = `${champ.ko} (${champ.en}) 상세 정보`;
-    document.getElementById("championDetailImage").src = champ.img;
+    document.getElementById("championDetailImage").src = getChampionImagePath(champ.img);
     document.getElementById("championDetailImage").alt = champ.ko;
     document.getElementById("championDetailName").textContent = `${champ.ko} (${champ.en})`;
     document.getElementById("championDetailMeta").textContent = `역할: ${champ.role} / 난이도: ${champ.difficulty}`;
