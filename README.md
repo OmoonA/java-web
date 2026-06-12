@@ -528,7 +528,6 @@ src\main\java\org\acme\GreetingResource.java
 - [X] Toast 구현을 위해 HTML도 바꾸고 test.js도 수정했는데 작동안함
 ->   ` <script src="../js/test.js"></script>`를 추가해줌
 
-- [ ] ppt의 이모지들이 복사가 안되어서 전반적으로 통일감있게 수정필요->이모지 포기
 
 - [x] 프로필 말풍선 tooltip 구현하려고 했으나 말풍선이 안뜸 -> 토스트와의 충돌이라는것을 알아냄 ->
     window.onload 를 아래의 코드로 바꿔서 수정
