@@ -368,7 +368,6 @@ src\main\java\org\acme\GreetingResource.java
     <td><img src="screenshots\스크린샷 2026-06-12 110612.png" width="100%"></td>
     <td><img src="screenshots\스크린샷 2026-06-12 110912.png" width="100%"></td>
     <td><img src="screenshots\스크린샷 2026-06-12 111757.png" width="100%"></td>
-    <td><img src="" width="100%"></td>
   </tr>
 </table>
 
@@ -394,7 +393,6 @@ src\main\java\org\acme\GreetingResource.java
   <tr>
     <td><img src="screenshots\스크린샷 2026-06-12 120929.png" width="100%"></td>
     <td><img src="screenshots\스크린샷 2026-06-12 121055.png" width="100%"></td>
-    <td><img src="" width="100%"></td>
   </tr>
 </table>
 
@@ -405,19 +403,30 @@ src\main\java\org\acme\GreetingResource.java
 - 네비바의 profile.js 수정하여 사용자명 동적 표시
 ### 회원정보 수정 
 - 회원정보 수정 폼 추가하기
--
+- 비밀번호 변경 폼 추가(회원정보 토글안에 같이 잘 위치시키기)
+- 변경 성공 Toast 처리 (완료후 로그인페이지 이동)
+- input_sha256 연동 누락하여 비밀번호 변경 버튼 작동안함 -> 수정 완
+
+<table align="center">
+  <tr>
+    <td><img src="screenshots\스크린샷 2026-06-12 121914.png" width="100%"></td>
+    <td><img src="screenshots\스크린샷 2026-06-12 122103.png" width="100%"></td>
+    <td><img src="screenshots\스크린샷 2026-06-12 123713.png" width="100%"></td>
+    <td><img src="screenshots\스크린샷 2026-06-12 125351.png" width="100%"></td>
+  </tr>
+</table>
 
 
 
 ## 기말고사
 
 ## 과제들
-- [ ] 3w 상단 좌측 로고(네비바 안 LOL로고)
+- [x] 3w 상단 좌측 로고(네비바 안 LOL로고)
 
 
-- [ ] 3w 네비바 가운데 정렬
+- [x] 3w 네비바 가운데 정렬
 
-- [ ] 3w 챔피온 카드(상세정보 모달 구현)
+- [x] 3w 챔피온 카드(상세정보 모달 구현)
 
 - [ ] 6w 데이터 정의 추가
     -새로 추가한 챔피온 데이터 3개이상
