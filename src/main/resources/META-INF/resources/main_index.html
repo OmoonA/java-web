@@ -51,7 +51,7 @@
                     <img src="images/logo.webp" alt="" width="30" height="24">
                 </a>  
                 <!-- [변경] "Navbar" 텍스트 → 다크/라이트 토글 버튼 -->
-                <button class="btn border-0" id="themeToggleBtn" onclick="toggleTheme()">
+                <button class="btn border-0" id="themeToggleBtn">
                     DARK
                 </button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -295,7 +295,26 @@
 
 
 
-    <!-- 모달 (iframe으로 Aatrox.html 불러오기) -->
+    <script src="js/search.js"></script>
+
+
+<!-- 토스트 컨테이너 </body> 바로 위에 추가 -->
+<div class="toast-container position-fixed
+bottom-0 end-0 p-3" style="z-index:9999">
+<div id="liveToast" class="toast align-items-center
+text-white bg-success border-0" role="alert">
+<div class="d-flex">
+<div class="toast-body" id="toastBody">
+메시지
+</div>
+<button type="button"
+class="btn-close btn-close-white me-2 m-auto"
+data-bs-dismiss="toast"></button>
+</div>
+</div>
+</div>
+
+    <!-- 아트록스 모달 (iframe) -->
     <div class="modal fade" id="modalAatrox" tabindex="-1" aria-labelledby="modalAatroxLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-dark text-white border-secondary">
@@ -318,39 +337,132 @@
             </div>
         </div>
     </div>
-    <!-- 5주차 과제 모달 추가해보기 -->
-    <div class="modal fade" id="modalMel" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+    <!-- 멜 모달 -->
+    <div class="modal fade" id="modalMel" tabindex="-1" aria-labelledby="modalMelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-dark text-white border-secondary">
                 <div class="modal-header border-secondary">
-                    <h5 class="modal-title">챔피언 상세 정보: 멜</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="modalMelLabel">멜 (Mel) 상세 정보</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-0" style="height: 60vh;">
-                    <iframe src="modals/Mel.html" style="width: 100%; height: 100%; border: none;"></iframe>
+                <div class="modal-body" style="background: #0a0e17;">
+                    <div class="container-fluid p-3">
+                        <div class="row g-4">
+                            <div class="col-lg-5 text-center">
+                                <img src="https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Mel.png"
+                                    class="img-fluid rounded shadow-lg" alt="멜"
+                                    style="max-height: 480px; object-fit: contain;">
+                                <div class="mt-3">
+                                    <h3 class="mb-1" style="color: #c8aa6e;">멜 (Mel)</h3>
+                                    <p class="text-muted fs-5">마법사 / 난이도: 상</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <h4 class="border-bottom border-secondary pb-2 mb-3" style="color: #c8aa6e;">스킬</h4>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item bg-transparent border-secondary text-white">패시브: 이글거리는 광휘</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">Q: 빛의 세례</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">W: 반박</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">E: 태양 올가미</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">R: 황금 일식</li>
+                                </ul>
+                                <h4 class="border-bottom border-secondary pb-2 mb-3" style="color: #c8aa6e;">배경 스토리 요약</h4>
+                                <p class="text-secondary lh-lg">녹서스의 명문 메다르다 가문의 후계자. 우아한 귀족의 이면에 상대의 모든 것을 꿰뚫어 보는 노련한 정치가의 면모를 지녔다. 검은 장미단과 조우한 뒤 어머니의 기만을 알게 되었고, 마법의 힘에 각성하여 답을 찾아 고향으로 향한다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="js/search.js"></script>
-
-
-<!-- 토스트 컨테이너 </body> 바로 위에 추가 -->
-<div class="toast-container position-fixed
-bottom-0 end-0 p-3" style="z-index:9999">
-<div id="liveToast" class="toast align-items-center
-text-white bg-success border-0" role="alert">
-<div class="d-flex">
-<div class="toast-body" id="toastBody">
-메시지
-</div>
-<button type="button"
-class="btn-close btn-close-white me-2 m-auto"
-data-bs-dismiss="toast"></button>
-</div>
-</div>
-</div>
+    <!-- 자헨 모달 -->
+    <div class="modal fade" id="modalZaahen" tabindex="-1" aria-labelledby="modalZaahenLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="modalZaahenLabel">자헨 (Zaahen) 상세 정보</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background: #0a0e17;">
+                    <div class="container-fluid p-3">
+                        <div class="row g-4">
+                            <div class="col-lg-5 text-center">
+                                <img src="https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Zaahen.png"
+                                    class="img-fluid rounded shadow-lg" alt="자헨"
+                                    style="max-height: 480px; object-fit: contain;">
+                                <div class="mt-3">
+                                    <h3 class="mb-1" style="color: #c8aa6e;">자헨 (Zaahen)</h3>
+                                    <p class="text-muted fs-5">전사 / 난이도: 상</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <h4 class="border-bottom border-secondary pb-2 mb-3" style="color: #c8aa6e;">스킬</h4>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item bg-transparent border-secondary text-white">패시브: 전쟁 단련</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">Q: 다르킨의 글레이브</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">W: 공포의 귀환</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">E: 찬란한 쇄도</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">R: 단호한 판결</li>
+                                </ul>
+                                <h4 class="border-bottom border-secondary pb-2 mb-3" style="color: #c8aa6e;">배경 스토리 요약</h4>
+                                <p class="text-secondary lh-lg">신성과 불경한 힘을 모두 지닌 추락한 신. 자신을 집어삼키려는 타락에 맞서 싸우며 동족 다르킨을 사냥한다. 광기를 피해 스스로 글레이브 속에 갇혔으나, 이제 자유의 몸이 되어 고결한 마음과 잔혹한 의지로 룬테라를 위협하는 모든 존재에 맞선다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 유나라 모달 -->
+    <div class="modal fade" id="modalYunara" tabindex="-1" aria-labelledby="modalYunaraLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="modalYunaraLabel">유나라 (Yunara) 상세 정보</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background: #0a0e17;">
+                    <div class="container-fluid p-3">
+                        <div class="row g-4">
+                            <div class="col-lg-5 text-center">
+                                <img src="https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Yunara.png"
+                                    class="img-fluid rounded shadow-lg" alt="유나라"
+                                    style="max-height: 480px; object-fit: contain;">
+                                <div class="mt-3">
+                                    <h3 class="mb-1" style="color: #c8aa6e;">유나라 (Yunara)</h3>
+                                    <p class="text-muted fs-5">원거리딜러 / 난이도: 중</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <h4 class="border-bottom border-secondary pb-2 mb-3" style="color: #c8aa6e;">스킬</h4>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item bg-transparent border-secondary text-white">패시브: 최초의 땅의 맹세</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">Q: 영혼 단련</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">W: 심판의 궤적</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">E: 칸메이의 발자취</li>
+                                    <li class="list-group-item bg-transparent border-secondary text-white">R: 자기 초월</li>
+                                </ul>
+                                <h4 class="border-bottom border-secondary pb-2 mb-3" style="color: #c8aa6e;">배경 스토리 요약</h4>
+                                <p class="text-secondary lh-lg">아이오니아에 대한 변함없는 헌신으로, 수 세기 동안 영혼 세계에 칩거하며 전설적인 킨코우 유물 에이온 에르나를 다루는 법을 연마했다. 이 땅에서 불화와 갈등을 몰아내겠다는 그녀의 맹세는 그 신념만큼이나 굳건하다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

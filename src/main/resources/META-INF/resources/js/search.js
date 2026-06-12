@@ -14,6 +14,7 @@ const CHAMPIONS = [
         lane: "탑",
         img: "images/아또또록스.png",
         difficulty: "상",
+        modalId: "modalAatrox",
     },
     {
         name: "사일러스",
@@ -62,24 +63,26 @@ const CHAMPIONS = [
         lane: "미드",
         img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Mel.png",
         difficulty: "상",
+        modalId: "modalMel",
     },
-        {
+    {
         name: "자헨",
         engName: "Zaahen",
         role: "전사",
         lane: "탑",
         img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Zaahen.png",
-        difficulty: "중",
+        difficulty: "상",
+        modalId: "modalZaahen",
     },
-        {
+    {
         name: "유나라",
         engName: "Yunara",
         role: "원거리딜러",
         lane: "원딜",
         img: "https://ddragon.leagueoflegends.com/cdn/15.24.1/img/champion/Yunara.png",
         difficulty: "중",
+        modalId: "modalYunara",
     },
-
 ];
 // ── 뉴스 데이터 ──────────────────────────────────────────────
 const NEWS = [
@@ -127,7 +130,7 @@ function performSearch(query) {
         champList.innerHTML = champResults
             .map(
                 (c) => `
-<div class="search-result-card d-flex align-items-center p-0 overflow-hidden">
+<div class="search-result-card d-flex align-items-center p-0 overflow-hidden"${c.modalId ? ` data-bs-toggle="modal" data-bs-target="#${c.modalId}" style="cursor:pointer;"` : ''}>
 <img src="${c.img}" alt="${c.name}">
 <div class="p-3">
 <div style="font-weight:700; font-size:1rem; color:#111;">${c.name} <span style="color:#888; font-size:0.85rem;">(${c.engName})</span></div>

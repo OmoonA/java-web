@@ -14,3 +14,4 @@ navbar.classList.remove('navbar-light', 'bg-light');
 navbar.classList.add('navbar-dark', 'bg-dark');
 }
 }
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
